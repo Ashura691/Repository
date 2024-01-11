@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'DIN Next LT Pro Bold';
+    src: url('//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.eot');
+    src: url('//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.eot?#iefix') format('embedded-opentype'), url('//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.woff2') format('woff2'), url('//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.woff') format('woff'), url('//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.ttf') format('truetype'), url('//db.onlinewebfonts.com/t/3a88649e176a40a6d80b395ca0ae430d.svg#DIN Next LT Pro Bold') format('svg');
+}
+
+:root {
+    --monuFont: 'Monument Extended';
+    --popFont: 'Poppins';
+    --nunitoSans: 'Nunito Sans';
+    --maincolor: #ff4566;
+    --dark-color: #222;
+    --lightText-color: #ccc;
+    --darkGrey-color: #777;
+    --v-red: #ff4655;
+    --v-white: #ece8e1;
+    --v-black: #0f1923;
+    --v-outline: rgba(236, 232, 225, .5);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+html,
+
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #f1f1f1;
+}
+
+.sContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+    /* z-index: -1; */
+}
+
+.s1 {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    background: rgba(0,0,0,0.3);
+    width: 1px;
+    height: 100vh;
+}
+
+.s2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: rgba(0,0,0,0.3);
+    width: 1px;
+    height: 100vh;
+}
+
+.s3 {
+    position: absolute;
+    top: 0;
+    left: 75%;
+    background: rgba(0,0,0,0.3);
+    width: 1px;
+    height: 100vh;
+}
+
+.webContainer {
+    position: relative;
+    z-index: 1000;
+}
+
+.webContainer nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    /* background: #222; */
+    display: flex;
+}
+
+nav .logo {
+    width: 40%;
+}
+
+nav .menu {
+    width: 40%;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.menu_link {
+    text-decoration: none;
+    color: var(--dark-color);
+    margin: 0 30px;
+    line-height: 65px;
+}
+
+.button {
+    line-height: 65px;
+}
+/* 
+.button button {
+    padding: 12px 30px;
+    background: var(--maincolor);
+    border: none;
+    outline: none;
+    color: #FFF;
+  
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
+} */
+button {
+    font-family: 'DIN Next LT Pro Bold';
+    font-size: 1.9rem;
+    font-weight: 400;
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: .7rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--maincolor);
+    border: 0;
+    background-color: transparent;
+}
+
+button:hover {
+    color: var(--v-white);
+}
+
+button::before, button::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(50% - .4rem);
+    content: '';
+    border: 1px solid var(--v-outline);
+    background-color: transparent;
+}
+
+button::before {
+    top: 0;
+    border-bottom: 0;
+}
+
+button::after {
+    bottom: 0;
+    border-top: 0;
+}
+
+/* Hover Effect */
+
+.hover-effect {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    content: '';
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transform: translateX(-100%) skew(-10deg);
+    background-color: var(--v-red);
+}
+
+button:hover .hover-effect {
+    transform: translateX(0) skew(-10deg);
+}
+a{
+    text-decoration: none;
+    color: var(--maincolor);
+}
+/* LABEL  */
+
+.label {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    
+}
+
+.label:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+/* Label Text */
+
+.label-text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 1.9rem 3rem;
+    font-weight: bold;
+}
+
+/* Right Bottom Corner dot */
+
+.label-text:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    content: '';
+    transition: background-color .2s ease-in;
+    background-color: var(--v-black);
+}
+
+button:hover .label-text:after {
+    background-color: var(--v-white);
+
+}
+
+/* PRIMARY BUTTON */
+
+.primary {
+    color: var(--v-black);
+}
+
+.primary .label::before {
+    background-color: var(--maincolor);
+}
+
+/* OUTLINE BUTTON */
+
+.outline {
+    color: var(--maincolor);
+}
+
+.outline .label::before, .outline .label::after {
+    border: 1px solid var(--v-outline);
+}
+
+/* OUTLINE RED BUTTON */
+
+.outline+.red {
+    color: var(--v-red);
+}
+
+.outline+.red:hover {
+    color: var(--v-white);
+}
+
+.outline+.red .label::before, .outline+.red .label::after {
+    border-color: var(--v-red);
+}
+.logo p {
+  
+    font-size: 24px;
+    color: #222;
+    font-weight: lighter;
+    line-height: 65px;
+    margin-left: 40px;
+    text-transform: uppercase;
+}
+
+.app_wrap {
+    position: fixed;
+    top: 22%;
+    left: 8%;
+}
+
+.app_wrap h2 {
+    font-size: 4.2rem;
+    color: #0f1923;
+}
+
+.app_wrap h2 span {
+    color: var(--maincolor);
+}
+
+.SText {
+    font-size: 18px;
+    color: var(--dark-color);
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.SText span {
+    color: #ff4566;
+}
+
+.app_btn {
+    margin-top: 50px;
+    display: flex;
+}
+
+.app_btn .primaryBtn {
+    padding: 15px 56px;
+    margin-right: 40px;
+    background: #ff4566;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #FFF;
+    font-weight: 500;
+   
+}
+
+.app_btn .accBtn {
+    padding: 15px 30px;
+    margin-right: 40px;
+    background: #0f1923;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #FFF;
+    font-weight: 500;
+   
+}
+
+#img1 {
+    position: fixed;
+    right: 0%;
+    z-index: -1;
+}
+
+/* #img2 {
+    position: fixed;
+    z-index: -1;
+    left: -3%;
+    bottom: 0;
+    width: 200px;
+} */
+
+.square {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0f1923;
+    clip-path: circle(16% at bottom left);
+}
